@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.0...v1.0.1) (2023-10-14)
+
+
+### Changed
+
+* Adjust for neovim ([9850596](https://github.com/simao-ferreira/thescream.nvim/commit/985059611782f1ad5f822f31f5ef093d68c38d67))
+
 ## 1.0.0 (2023-10-14)
 
 
