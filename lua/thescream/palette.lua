@@ -1,54 +1,36 @@
 local colors = {
-    fg = "#EBDBB2",
-    bg = "#000508",
-    alt_fg = "#928374",
-    alt_bg = "#1C1B1A",
-    dark = "#000508",
-    accent = "#282828",
-    popup_back = "#BBBBBB",
-    search_orange = "#BC5215",
-    line = "#BBBBBB",
-    search_blue = "#326EB4",
-    white = "#EBDBB2",
-    gray = "#928374",
-    dark_gray = "#282828",
-    context = "#928374",
-    light_gray = "#928374",
-    tree_gray = "#BBBBBB",
-    blue = "#326EB4",
-    vivid_blue = "#2BB2E8",
-    dark_blue = "#326EB4",
-    folder_blue = "#326EB4",
-    light_blue = "#3C85DA",
-    green = "#5F981A",
-    cyan = "#2BB2E8",
-    light_green = "#8EC07C",
-    red = "#CC241D",
-    orange = "#BF5E29",
-    light_red = "#CC241D",
-    yellow = "#FFC700",
-    purple = "#593EA1",
-    magenta = "#A02F6F",
-    cursor_fg = "#282828",
-    cursor_bg = "#928374",
-    sign_add = "#5F981A",
-    sign_change = "#326EB4",
-    sign_delete = "#CC241D",
-    tree_sign_add = "#5F981A",
-    tree_sign_change = "#FFC700",
-    error_red = "#CC241D",
-    warning_orange = "#BF5E29",
-    info_yellow = "#FFC700",
-    hint_blue = "#326EB4",
-    success_green = "#5F981A",
-    purple_test = "#593EA1",
-    cyan_test = "#2BB2E8",
-    ui_blue = "#326EB4",
-    ui2_blue = "#326EB4",
-    ui3_blue = "#326EB4",
-    ui4_blue = "#326EB4",
-    ui_orange = "#BF5E29",
-    ui_purple = "#593EA1",
+
+    black = "#000508", -- bg
+    white = "#EBDBB2", -- fg
+
+    dark_grey = "#282828", -- color0
+    grey = "#928374", -- color8
+    light_grey = "#BBBBBB", -- color7
+
+    red = "#CC241D", -- color1
+    orange = "#BF5E29", -- color9
+
+    green = "#5F981A", -- color2
+    light_green = "#B8BB26", -- color10
+
+    yellow = "#FFC700", -- color3
+    dark_yellow = '#AD8919', -- color11
+
+    blue = "#326EB4", -- color4
+    light_blue = "#2BB2E8", -- color12
+
+    purple = "#593EA1", -- color5
+    light_purple = '#8B7DCA', -- color13
+
+    fg = "#EBDBB2", --white
+    alt_fg = "#928374", --grey
+
+    bg = "#121212", -- Extra color
+    alt_bg = "#282828",
+
+    add = "#5F981A", -- green
+    change = "#FFC700", -- yellow
+    delete = "#CC241D", -- red
 }
 
 return colors
