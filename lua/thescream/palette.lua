@@ -17,7 +17,7 @@ local colors = {
     color12 = "#2BB2E8", -- light blue
     color13 = '#8B7DCA', -- light purple
     color14 = "#EBDBB2", -- pale green
-    color15 = "#8EC07C", -- white
+    color15 = "#EAE8E1", -- white
 
     nvim_bg = "#121212", -- Extra gray color (closer to black)
     add = color02, -- green
