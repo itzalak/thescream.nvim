@@ -1,349 +1,376 @@
 local c = require('thescream.palette')
 
-local hl = vim.api.nvim_set_hl
-local theme = {}
+local M = {}
 
-theme.set_highlights = function()
+M.set_highlights = function()
+    local highlights = {
+        Normal = { fg = c.fg, bg = c.nvim_bg },
+        SignColumn = { bg = c.nvim_bg },
+        MsgArea = { fg = c.fg, bg = c.nvim_bg },
+        ModeMsg = { fg = c.fg, bg = c.bg },
+        MsgSeparator = { fg = c.fg, bg = c.nvim_bg },
+        SpellBad = { underline = true, italic = true, },
+        SpellCap = { fg = c.color03, underline = true, },
+        SpellLocal = { fg = c.color02, underline = true, },
+        SpellRare = { fg = c.color05, underline = true, },
+        NormalNC = { fg = c.fg, bg = c.nvim_bg },
+        Pmenu = { fg = c.color00, bg = c.color07, sp = 'NONE', blend = 50, },
+        PmenuSel = { bg = c.color04 },
+        WildMenu = { fg = c.fg, bg = c.color04 },
+        CursorLineNr = { fg = c.color00, bold = true, },
+        Comment = { fg = c.color08, italic = true, },
+        Folded = { fg = c.color00, bg = c.color00 },
+        FoldColumn = { fg = c.color00, bg = c.color00 },
+        LineNr = { fg = c.color08, },
+        Whitespace = { fg = c.nvim_bg, },
+        VertSplit = { fg = c.color08, bg = c.nvim_bg },
+        CursorLine = { bg = c.bg },
+        CursorColumn = { bg = c.bg },
+        ColorColumn = { bg = c.bg },
+        NormalFloat = { bg = c.nvim_bg },
+        FloatBorder = { bg = c.color00 },
+        FloatTitle = { bg = c.color00 },
+        Visual = { bg = c.color04 },
+        VisualNOS = { bg = c.color00 },
+        WarningMsg = { fg = c.color01, bg = c.nvim_bg },
+        DiffAdd = { fg = c.color00, bg = c.add },
+        DiffChange = { fg = c.color00, bg = c.change, underline = true, },
+        DiffDelete = { fg = c.color00, bg = c.delete },
+        QuickFixLine = { bg = c.color04 },
+        PmenuSbar = { bg = c.color00 },
+        PmenuThumb = { bg = c.color08 },
+        MatchWord = { underline = true, },
+        MatchParen = { fg = c.color04, bg = c.nvim_bg, underline = true, },
+        MatchWordCur = { underline = true, },
+        MatchParenCur = { underline = true, },
+        Cursor = { fg = c.color00, bg = c.color08 },
+        lCursor = { fg = c.color00, bg = c.color08 },
+        CursorIM = { fg = c.color00, bg = c.color08 },
+        TermCursor = { fg = c.color00, bg = c.color08 },
+        TermCursorNC = { fg = c.color00, bg = c.color08 },
+        Conceal = { fg = c.color00, },
+        Directory = { fg = c.color04, },
+        SpecialKey = { fg = c.color04, bold = true, },
+        Title = { fg = c.color04, bold = true, },
+        ErrorMsg = { fg = c.color01, bg = c.nvim_bg, bold = true, },
+        Search = { fg = c.color00, bg = c.color04 },
+        IncSearch = { fg = c.color09, bg = c.color00 },
+        Substitute = { fg = c.color00, bg = c.color09 },
+        MoreMsg = { fg = c.color09, },
+        Question = { fg = c.color09, },
+        EndOfBuffer = { fg = c.nvim_bg, },
+        NonText = { fg = c.nvim_bg, },
+        Variable = { fg = c.color12, },
+        String = { fg = c.color09, },
+        Character = { fg = c.color09, },
+        Constant = { fg = c.color12, },
+        Number = { fg = c.color10, },
+        Boolean = { fg = c.color04, },
+        Float = { fg = c.color10, },
+        Identifier = { fg = c.color12, },
+        Function = { fg = c.color03, },
+        Operator = { fg = c.fg, },
+        Type = { fg = c.color12, },
+        StorageClass = { fg = c.color04, },
+        Structure = { fg = c.color04, },
+        Typedef = { fg = c.color04, },
+        Keyword = { fg = c.color04, },
+        Statement = { fg = c.color05, },
+        Conditional = { fg = c.color04, },
+        Repeat = { fg = c.color05, },
+        Label = { fg = c.color05, },
+        Exception = { fg = c.color05, },
+        Include = { fg = c.color05, },
+        PreProc = { fg = c.color05, },
+        Define = { fg = c.color05, },
+        Macro = { fg = c.color05, },
+        PreCondit = { fg = c.color05, },
+        Special = { fg = c.color09, },
+        SpecialChar = { fg = c.fg, },
+        Tag = { fg = c.color04, },
+        Debug = { fg = c.color01, },
+        Delimiter = { fg = c.color08, },
+        SpecialComment = { fg = c.color08, },
+        Underlined = { underline = true, },
+        Bold = { bold = true, },
+        Italic = { italic = true, },
+        Ignore = { fg = c.color12, bg = c.nvim_bg, bold = true, },
+        Todo = { fg = c.color13, bg = c.nvim_bg, bold = true, },
+        Error = { fg = c.color01, bg = c.nvim_bg, bold = true, },
+        TabLine = { fg = c.color00, bg = c.color07 },
+        TabLineSel = { fg = c.fg, bg = c.color07 },
+        TabLineFill = { fg = c.color07, bg = c.color07 },
 
-    -- highlights
-    hl(0, "Normal", { fg = c.fg, bg = c.bg })
-    hl(0, "SignColumn", {  bg = c.bg })
-    hl(0, "MsgArea", { fg = c.fg, bg = c.bg })
-    hl(0, "ModeMsg", { fg = c.fg, bg = c.black })
-    hl(0, "MsgSeparator", { fg = c.fg, bg = c.bg })
-    hl(0, "SpellBad", { underline = true, italic = true,  })
-    hl(0, "SpellCap", { fg = c.yellow, underline = true, })
-    hl(0, "SpellLocal", { fg = c.green, underline = true, })
-    hl(0, "SpellRare", { fg = c.purple, underline = true, })
-    hl(0, "NormalNC", { fg = c.fg, bg = c.bg })
-    hl(0, "Pmenu", { fg = c.dark_grey, bg = c.light_grey, sp = 'NONE', blend = 50, })
-    hl(0, "PmenuSel", {  bg = c.blue })
-    hl(0, "WildMenu", { fg = c.fg, bg = c.blue })
-    hl(0, "CursorLineNr", { fg = c.dark_grey, bold = true, })
-    hl(0, "Comment", { fg = c.grey, italic = true, })
-    hl(0, "Folded", { fg = c.dark_grey, bg = c.alt_bg })
-    hl(0, "FoldColumn", { fg = c.dark_grey, bg = c.alt_bg })
-    hl(0, "LineNr", { fg = c.grey, })
-    hl(0, "Whitespace", { fg = c.bg, })
-    hl(0, "VertSplit", { fg = c.grey, bg = c.bg })
-    hl(0, "CursorLine", {  bg = c.black })
-    hl(0, "CursorColumn", {  bg = c.black })
-    hl(0, "ColorColumn", {  bg = c.black })
-    hl(0, "NormalFloat", {  bg = c.bg })
-    hl(0, "FloatBorder", {  bg = c.alt_bg })
-    hl(0, "FloatTitle", {  bg = c.alt_bg })
-    hl(0, "Visual", {  bg = c.blue })
-    hl(0, "VisualNOS", {  bg = c.alt_bg })
-    hl(0, "WarningMsg", { fg = c.red, bg = c.bg })
-    hl(0, "DiffAdd", { fg = c.alt_bg, bg = c.add })
-    hl(0, "DiffChange", { fg = c.alt_bg, bg = c.change, underline = true, })
-    hl(0, "DiffDelete", { fg = c.alt_bg, bg = c.delete })
-    hl(0, "QuickFixLine", {  bg = c.blue })
-    hl(0, "PmenuSbar", { bg = c.alt_bg })
-    hl(0, "PmenuThumb", { bg = c.grey })
-    hl(0, "MatchWord", { underline = true, })
-    hl(0, "MatchParen", { fg = c.blue, bg = c.bg, underline = true, })
-    hl(0, "MatchWordCur", { underline = true, })
-    hl(0, "MatchParenCur", { underline = true, })
-    hl(0, "Cursor", { fg = c.dark_grey, bg = c.grey })
-    hl(0, "lCursor", { fg = c.dark_grey, bg = c.grey })
-    hl(0, "CursorIM", { fg = c.dark_grey, bg = c.grey })
-    hl(0, "TermCursor", { fg = c.dark_grey, bg = c.grey })
-    hl(0, "TermCursorNC", { fg = c.dark_grey, bg = c.grey })
-    hl(0, "Conceal", { fg = c.dark_grey, })
-    hl(0, "Directory", { fg = c.blue, })
-    hl(0, "SpecialKey", { fg = c.blue, bold = true, })
-    hl(0, "Title", { fg = c.blue, bold = true, })
-    hl(0, "ErrorMsg", { fg = c.red, bg = c.bg, bold = true, })
-    hl(0, "Search", { fg = c.dark_grey, bg = c.blue })
-    hl(0, "IncSearch", { fg = c.orange, bg = c.dark_grey })
-    hl(0, "Substitute", { fg = c.dark_grey, bg = c.orange })
-    hl(0, "MoreMsg", { fg = c.orange, })
-    hl(0, "Question", { fg = c.orange, })
-    hl(0, "EndOfBuffer", { fg = c.bg, })
-    hl(0, "NonText", { fg = c.bg, })
-    hl(0, "Variable", { fg = c.light_blue, })
-    hl(0, "String", { fg = c.orange, })
-    hl(0, "Character", { fg = c.orange, })
-    hl(0, "Constant", { fg = c.light_blue, })
-    hl(0, "Number", { fg = c.light_green, })
-    hl(0, "Boolean", { fg = c.blue, })
-    hl(0, "Float", { fg = c.light_green, })
-    hl(0, "Identifier", { fg = c.light_blue, })
-    hl(0, "Function", { fg = c.yellow, })
-    hl(0, "Operator", { fg = c.fg, })
-    hl(0, "Type", { fg = c.light_blue, })
-    hl(0, "StorageClass", { fg = c.blue, })
-    hl(0, "Structure", { fg = c.blue, })
-    hl(0, "Typedef", { fg = c.blue, })
-    hl(0, "Keyword", { fg = c.blue, })
-    hl(0, "Statement", { fg = c.purple, })
-    hl(0, "Conditional", { fg = c.blue, })
-    hl(0, "Repeat", { fg = c.purple, })
-    hl(0, "Label", { fg = c.purple, })
-    hl(0, "Exception", { fg = c.purple, })
-    hl(0, "Include", { fg = c.purple, })
-    hl(0, "PreProc", { fg = c.purple, })
-    hl(0, "Define", { fg = c.purple, })
-    hl(0, "Macro", { fg = c.purple, })
-    hl(0, "PreCondit", { fg = c.purple, })
-    hl(0, "Special", { fg = c.orange, })
-    hl(0, "SpecialChar", { fg = c.white, })
-    hl(0, "Tag", { fg = c.blue, })
-    hl(0, "Debug", { fg = c.red, })
-    hl(0, "Delimiter", { fg = c.grey, })
-    hl(0, "SpecialComment", { fg = c.grey, })
-    hl(0, "Underlined", { underline = true, })
-    hl(0, "Bold", { bold = true, })
-    hl(0, "Italic", { italic = true, })
-    hl(0, "Ignore", { fg = c.light_blue, bg = c.bg, bold = true, })
-    hl(0, "Todo", { fg = c.light_purple, bg = c.bg, bold = true, })
-    hl(0, "Error", { fg = c.red, bg = c.bg, bold = true, })
-    hl(0, "TabLine", { fg = c.dark_grey, bg = c.light_grey })
-    hl(0, "TabLineSel", { fg = c.white, bg = c.light_grey })
-    hl(0, "TabLineFill", { fg = c.light_grey, bg = c.light_grey })
+        -- Treesitter
+        TSComment = { link = 'Comment' },
+        TSAnnotation = { fg = c.color04, },
+        TSAttribute = { fg = c.color12, },
+        TSConstructor = { fg = c.color12, },
+        TSType = { fg = c.color12, },
+        TSTypeBuiltin = { fg = c.color09, },
+        TSConditional = { fg = c.color03, },
+        TSException = { fg = c.color05, },
+        TSInclude = { fg = c.color05, },
+        TSKeywordReturn = { fg = c.color05, },
+        TSKeyword = { fg = c.color05, },
+        TSKeywordFunction = { fg = c.color05, },
+        TSLabel = { fg = c.color12, },
+        TSNamespace = { fg = c.color12, },
+        TSRepeat = { fg = c.color03, },
+        TSConstant = { fg = c.color09, },
+        TSConstBuiltin = { fg = c.color09, },
+        TSFloat = { fg = c.color09, },
+        TSNumber = { fg = c.color09, },
+        TSBoolean = { fg = c.color09, },
+        TSCharacter = { fg = c.color02, },
+        TSError = { fg = c.color01, },
+        TSFunction = { fg = c.color04, },
+        TSFuncBuiltin = { fg = c.color04, },
+        TSMethod = { fg = c.color04, },
+        TSConstMacro = { fg = c.color09, },
+        TSFuncMacro = { fg = c.color04, },
+        TSVariable = { fg = c.color12, },
+        TSVariableBuiltin = { fg = c.color01, },
+        TSProperty = { fg = c.color01, },
+        TSField = { fg = c.fg, },
+        TSParameter = { fg = c.color01, },
+        TSParameterReference = { fg = c.color01, },
+        TSSymbol = { fg = c.color12, },
+        TSText = { fg = c.color08, },
+        TSOperator = { fg = c.color08, },
+        TSPunctDelimiter = { fg = c.color08, },
+        TSTagDelimiter = { fg = c.color08, },
+        TSTagAttribute = { fg = c.color09, },
+        TSPunctBracket = { fg = c.color08, },
+        TSPunctSpecial = { fg = c.color05, },
+        TSString = { fg = c.color02, },
+        TSStringRegex = { fg = c.color02, },
+        TSStringEscape = { fg = c.color02, },
+        TSTag = { fg = c.color04, },
+        TSEmphasis = { italic = true, },
+        TSUnderline = { underline = true, },
+        TSTitle = { fg = c.fg, },
+        TSLiteral = { fg = c.color09, },
+        TSURI = { fg = c.color09, underline = true, },
+        TSKeywordOperator = { fg = c.color05, },
+        TSStructure = { fg = c.color12, },
+        TSStrong = { fg = c.color04, bold = true, },
+        TSQueryLinterError = { fg = c.color09, },
+        TreesitterContext = { bg = c.bg },
 
-    -- Treesitter
-    hl(0, "TSComment", { link = 'Comment' })
-    hl(0, "TSAnnotation", { fg = c.blue, })
-    hl(0, "TSAttribute", { fg = c.light_blue, })
-    hl(0, "TSConstructor", { fg = c.light_blue, })
-    hl(0, "TSType", { fg = c.light_blue, })
-    hl(0, "TSTypeBuiltin", { fg = c.orange, })
-    hl(0, "TSConditional", { fg = c.yellow, })
-    hl(0, "TSException", { fg = c.purple, })
-    hl(0, "TSInclude", { fg = c.purple, })
-    hl(0, "TSKeywordReturn", { fg = c.purple, })
-    hl(0, "TSKeyword", { fg = c.purple, })
-    hl(0, "TSKeywordFunction", { fg = c.purple, })
-    hl(0, "TSLabel", { fg = c.light_blue, })
-    hl(0, "TSNamespace", { fg = c.light_blue, })
-    hl(0, "TSRepeat", { fg = c.yellow, })
-    hl(0, "TSConstant", { fg = c.orange, })
-    hl(0, "TSConstBuiltin", { fg = c.orange, })
-    hl(0, "TSFloat", { fg = c.orange, })
-    hl(0, "TSNumber", { fg = c.orange, })
-    hl(0, "TSBoolean", { fg = c.orange, })
-    hl(0, "TSCharacter", { fg = c.green, })
-    hl(0, "TSError", { fg = c.red, })
-    hl(0, "TSFunction", { fg = c.blue, })
-    hl(0, "TSFuncBuiltin", { fg = c.blue, })
-    hl(0, "TSMethod", { fg = c.blue, })
-    hl(0, "TSConstMacro", { fg = c.orange, })
-    hl(0, "TSFuncMacro", { fg = c.blue, })
-    hl(0, "TSVariable", { fg = c.light_blue, })
-    hl(0, "TSVariableBuiltin", { fg = c.red, })
-    hl(0, "TSProperty", { fg = c.red, })
-    hl(0, "TSField", { fg = c.fg, })
-    hl(0, "TSParameter", { fg = c.red, })
-    hl(0, "TSParameterReference", { fg = c.red, })
-    hl(0, "TSSymbol", { fg = c.light_blue, })
-    hl(0, "TSText", { fg = c.alt_fg, })
-    hl(0, "TSOperator", { fg = c.alt_fg, })
-    hl(0, "TSPunctDelimiter", { fg = c.alt_fg, })
-    hl(0, "TSTagDelimiter", { fg = c.alt_fg, })
-    hl(0, "TSTagAttribute", { fg = c.orange, })
-    hl(0, "TSPunctBracket", { fg = c.alt_fg, })
-    hl(0, "TSPunctSpecial", { fg = c.purple, })
-    hl(0, "TSString", { fg = c.green, })
-    hl(0, "TSStringRegex", { fg = c.green, })
-    hl(0, "TSStringEscape", { fg = c.green, })
-    hl(0, "TSTag", { fg = c.blue, })
-    hl(0, "TSEmphasis", { italic = true, })
-    hl(0, "TSUnderline", { underline = true, })
-    hl(0, "TSTitle", { fg = c.fg, })
-    hl(0, "TSLiteral", { fg = c.orange, })
-    hl(0, "TSURI", { fg = c.orange, underline = true, })
-    hl(0, "TSKeywordOperator", { fg = c.purple, })
-    hl(0, "TSStructure", { fg = c.light_blue, })
-    hl(0, "TSStrong", { fg = c.blue, bold = true, })
-    hl(0, "TSQueryLinterError", { fg = c.orange, })
-    hl(0, "TreesitterContext", { bg = c.black })
+        -- markdown
+        markdownBlockquote = { fg = c.color02, },
+        markdownCode = { fg = c.color09, },
+        markdownCodeBlock = { fg = c.color09, },
+        markdownCodeDelimiter = { fg = c.color09, },
+        markdownH1 = { fg = c.color04, },
+        markdownH2 = { fg = c.color04, },
+        markdownH3 = { fg = c.color04, },
+        markdownH4 = { fg = c.color04, },
+        markdownH5 = { fg = c.color04, },
+        markdownH6 = { fg = c.color04, },
+        markdownHeadingDelimiter = { fg = c.color04, },
+        markdownHeadingRule = { fg = c.fg, bold = true, },
+        markdownId = { fg = c.color05, },
+        markdownIdDeclaration = { fg = c.color04, },
+        markdownIdDelimiter = { fg = c.color00, },
+        markdownLinkDelimiter = { fg = c.color00, },
+        markdownBold = { fg = c.color04, bold = true, },
+        markdownItalic = { italic = true, },
+        markdownBoldItalic = { fg = c.color03, bold = true, italic = true, },
+        markdownListMarker = { fg = c.color04, },
+        markdownOrderedListMarker = { fg = c.color04, },
+        markdownRule = { fg = c.color00, },
+        markdownUrl = { fg = c.color12, underline = true, },
+        markdownLinkText = { fg = c.color04, },
+        markdownFootnote = { fg = c.color09, },
+        markdownFootnoteDefinition = { fg = c.color09, },
+        markdownEscape = { fg = c.color03, },
 
-    -- markdown
-    hl(0, "markdownBlockquote", { fg = c.green, })
-    hl(0, "markdownCode", { fg = c.orange, })
-    hl(0, "markdownCodeBlock", { fg = c.orange, })
-    hl(0, "markdownCodeDelimiter", { fg = c.orange, })
-    hl(0, "markdownH1", { fg = c.blue, })
-    hl(0, "markdownH2", { fg = c.blue, })
-    hl(0, "markdownH3", { fg = c.blue, })
-    hl(0, "markdownH4", { fg = c.blue, })
-    hl(0, "markdownH5", { fg = c.blue, })
-    hl(0, "markdownH6", { fg = c.blue, })
-    hl(0, "markdownHeadingDelimiter", { fg = c.blue, })
-    hl(0, "markdownHeadingRule", { fg = c.fg, bold = true, })
-    hl(0, "markdownId", { fg = c.purple, })
-    hl(0, "markdownIdDeclaration", { fg = c.blue, })
-    hl(0, "markdownIdDelimiter", { fg = c.dark_grey, })
-    hl(0, "markdownLinkDelimiter", { fg = c.dark_grey, })
-    hl(0, "markdownBold", { fg = c.blue, bold = true, })
-    hl(0, "markdownItalic", { italic = true, })
-    hl(0, "markdownBoldItalic", { fg = c.yellow, bold = true, italic = true, })
-    hl(0, "markdownListMarker", { fg = c.blue, })
-    hl(0, "markdownOrderedListMarker", { fg = c.blue, })
-    hl(0, "markdownRule", { fg = c.dark_grey, })
-    hl(0, "markdownUrl", { fg = c.light_blue, underline = true, })
-    hl(0, "markdownLinkText", { fg = c.blue, })
-    hl(0, "markdownFootnote", { fg = c.orange, })
-    hl(0, "markdownFootnoteDefinition", { fg = c.orange, })
-    hl(0, "markdownEscape", { fg = c.yellow, })
+        -- Whichkey
+        WhichKey = { fg = c.color09, },
+        WhichKeySeparator = { fg = c.color02, },
+        WhichKeyGroup = { fg = c.color04, },
+        WhichKeyDesc = { fg = c.color12, },
+        WhichKeyFloat = { bg = c.bg },
 
-    -- Whichkey
-    hl(0, "WhichKey", { fg = c.orange, })
-    hl(0, "WhichKeySeparator", { fg = c.green, })
-    hl(0, "WhichKeyGroup", { fg = c.blue, })
-    hl(0, "WhichKeyDesc", { fg = c.light_blue, })
-    hl(0, "WhichKeyFloat", { bg = c.black })
+        -- Git
+        SignAdd = { fg = c.add, },
+        SignChange = { fg = c.change, },
+        SignDelete = { fg = c.delete, },
+        GitSignsAdd = { fg = c.add, },
+        GitSignsChange = { fg = c.change, },
+        GitSignsDelete = { fg = c.delete, },
 
-    -- Git
-    hl(0, "SignAdd", { fg = c.add, })
-    hl(0, "SignChange", { fg = c.change, })
-    hl(0, "SignDelete", { fg = c.delete, })
-    hl(0, "GitSignsAdd", { fg = c.add, })
-    hl(0, "GitSignsChange", { fg = c.change, })
-    hl(0, "GitSignsDelete", { fg = c.delete, })
+        -- LSP
+        LspDiagnosticsDefaultError = { fg = c.color01, },
+        LspDiagnosticsDefaultWarning = { fg = c.color09, },
+        LspDiagnosticsDefaultInformation = { fg = c.color03, },
+        LspDiagnosticsDefaultInfo = { fg = c.color03, },
+        LspDiagnosticsDefaultHint = { fg = c.color04, },
+        LspDiagnosticsVirtualTextError = { fg = c.color01, },
+        LspDiagnosticsVirtualTextWarning = { fg = c.color09, },
+        LspDiagnosticsVirtualTextInformation = { fg = c.color03, },
+        LspDiagnosticsVirtualTextInfo = { fg = c.color03, },
+        LspDiagnosticsVirtualTextHint = { fg = c.color04, },
+        LspDiagnosticsFloatingError = { fg = c.color01, },
+        LspDiagnosticsFloatingWarning = { fg = c.color09, },
+        LspDiagnosticsFloatingInformation = { fg = c.color03, },
+        LspDiagnosticsFloatingInfo = { fg = c.color03, },
+        LspDiagnosticsFloatingHint = { fg = c.color04, },
+        DiagnosticSignError = { fg = c.color01, },
+        DiagnosticSignWarning = { fg = c.color09, },
+        DiagnosticSignInformation = { fg = c.color03, },
+        DiagnosticSignInfo = { fg = c.color03, },
+        DiagnosticSignHint = { fg = c.color04, },
+        LspDiagnosticsSignError = { fg = c.color01, },
+        LspDiagnosticsSignWarning = { fg = c.color09, },
+        LspDiagnosticsSignInformation = { fg = c.color03, },
+        LspDiagnosticsSignInfo = { fg = c.color03, },
+        LspDiagnosticsSignHint = { fg = c.color04, },
+        LspDiagnosticsError = { fg = c.color01, },
+        LspDiagnosticsWarning = { fg = c.color09, },
+        LspDiagnosticsInformation = { fg = c.color03, },
+        LspDiagnosticsInfo = { fg = c.color03, },
+        LspDiagnosticsHint = { fg = c.color04, },
+        LspDiagnosticsUnderlineError = { underline = true, },
+        LspDiagnosticsUnderlineWarning = { underline = true, },
+        LspDiagnosticsUnderlineInformation = { underline = true, },
+        LspDiagnosticsUnderlineInfo = { underline = true, },
+        LspDiagnosticsUnderlineHint = { underline = true, },
+        LspReferenceRead = {  },
+        LspReferenceText = {  },
+        LspReferenceWrite = {  },
+        LspCodeLens = { fg = c.color08, italic = true, },
+        LspCodeLensSeparator = { fg = c.color08, italic = true, },
 
-    -- LSP
-    hl(0, "LspDiagnosticsDefaultError", { fg = c.red, })
-    hl(0, "LspDiagnosticsDefaultWarning", { fg = c.orange, })
-    hl(0, "LspDiagnosticsDefaultInformation", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsDefaultInfo", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsDefaultHint", { fg = c.blue, })
-    hl(0, "LspDiagnosticsVirtualTextError", { fg = c.red, })
-    hl(0, "LspDiagnosticsVirtualTextWarning", { fg = c.orange, })
-    hl(0, "LspDiagnosticsVirtualTextInformation", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsVirtualTextInfo", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsVirtualTextHint", { fg = c.blue, })
-    hl(0, "LspDiagnosticsFloatingError", { fg = c.red, })
-    hl(0, "LspDiagnosticsFloatingWarning", { fg = c.orange, })
-    hl(0, "LspDiagnosticsFloatingInformation", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsFloatingInfo", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsFloatingHint", { fg = c.blue, })
-    hl(0, "DiagnosticSignError", { fg = c.red, })
-    hl(0, "DiagnosticSignWarning", { fg = c.orange, })
-    hl(0, "DiagnosticSignInformation", { fg = c.yellow, })
-    hl(0, "DiagnosticSignInfo", { fg = c.yellow, })
-    hl(0, "DiagnosticSignHint", { fg = c.blue, })
-    hl(0, "LspDiagnosticsSignError", { fg = c.red, })
-    hl(0, "LspDiagnosticsSignWarning", { fg = c.orange, })
-    hl(0, "LspDiagnosticsSignInformation", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsSignInfo", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsSignHint", { fg = c.blue, })
-    hl(0, "LspDiagnosticsError", { fg = c.red, })
-    hl(0, "LspDiagnosticsWarning", { fg = c.orange, })
-    hl(0, "LspDiagnosticsInformation", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsInfo", { fg = c.yellow, })
-    hl(0, "LspDiagnosticsHint", { fg = c.blue, })
-    hl(0, "LspDiagnosticsUnderlineError", { underline = true, })
-    hl(0, "LspDiagnosticsUnderlineWarning", { underline = true, })
-    hl(0, "LspDiagnosticsUnderlineInformation", { underline = true, })
-    hl(0, "LspDiagnosticsUnderlineInfo", { underline = true, })
-    hl(0, "LspDiagnosticsUnderlineHint", { underline = true, })
-    hl(0, "LspReferenceRead", {  })
-    hl(0, "LspReferenceText", {  })
-    hl(0, "LspReferenceWrite", {  })
-    hl(0, "LspCodeLens", { fg = c.grey, italic = true, })
-    hl(0, "LspCodeLensSeparator", { fg = c.grey, italic = true, })
+        -- Telescope
+        TelescopeSelection = { fg = c.color04, },
+        TelescopeMatching = { fg = c.color03, bold = true, },
+        TelescopeBorder = { fg = c.color04, bg = c.nvim_bg },
 
-    -- Telescope
-    hl(0, "TelescopeSelection", { fg = c.blue, })
-    hl(0, "TelescopeMatching", { fg = c.yellow, bold = true, })
-    hl(0, "TelescopeBorder", { fg = c.blue, bg = c.bg })
+        -- NvimTree
+        NvimTreeFolderIcon = { fg = c.color04, },
+        NvimTreeIndentMarker = { fg = c.color07, },
+        NvimTreeNormal = { fg = c.color00, bg = c.color07 },
+        NvimTreeVertSplit = { fg = c.color00, bg = c.color00 },
+        NvimTreeFolderName = { fg = c.color04, },
+        NvimTreeOpenedFolderName = { fg = c.color04, bold = true, italic = true, },
+        NvimTreeEmptyFolderName = { fg = c.color08, italic = true, },
+        NvimTreeGitIgnored = { fg = c.color08, italic = true, },
+        NvimTreeImageFile = { fg = c.color00, },
+        NvimTreeSpecialFile = { fg = c.color09, },
+        NvimTreeEndOfBuffer = { fg = c.color07, },
+        NvimTreeCursorLine = { bg = c.color00 },
+        NvimTreeGitignoreIcon = { fg = c.color09, },
+        NvimTreeGitStaged = { fg = c.add, },
+        NvimTreeGitNew = { fg = c.add, },
+        NvimTreeGitRenamed = { fg = c.add, },
+        NvimTreeGitDeleted = { fg = c.delete, },
+        NvimTreeGitMerge = { fg = c.change, },
+        NvimTreeGitDirty = { fg = c.change, },
+        NvimTreeSymlink = { fg = c.color12, },
+        NvimTreeRootFolder = { fg = c.fg, bold = true, },
+        NvimTreeExecFile = { fg = c.color10, },
 
-    -- NvimTree
-    hl(0, "NvimTreeFolderIcon", { fg = c.blue, })
-    hl(0, "NvimTreeIndentMarker", { fg = c.light_grey, })
-    hl(0, "NvimTreeNormal", { fg = c.dark_grey, bg = c.light_grey })
-    hl(0, "NvimTreeVertSplit", { fg = c.alt_bg, bg = c.alt_bg })
-    hl(0, "NvimTreeFolderName", { fg = c.blue, })
-    hl(0, "NvimTreeOpenedFolderName", { fg = c.blue, bold = true, italic = true, })
-    hl(0, "NvimTreeEmptyFolderName", { fg = c.grey, italic = true, })
-    hl(0, "NvimTreeGitIgnored", { fg = c.grey, italic = true, })
-    hl(0, "NvimTreeImageFile", { fg = c.dark_grey, })
-    hl(0, "NvimTreeSpecialFile", { fg = c.orange, })
-    hl(0, "NvimTreeEndOfBuffer", { fg = c.light_grey, })
-    hl(0, "NvimTreeCursorLine", { bg = c.dark_grey })
-    hl(0, "NvimTreeGitignoreIcon", { fg = c.orange, })
-    hl(0, "NvimTreeGitStaged", { fg = c.add, })
-    hl(0, "NvimTreeGitNew", { fg = c.add, })
-    hl(0, "NvimTreeGitRenamed", { fg = c.add, })
-    hl(0, "NvimTreeGitDeleted", { fg = c.delete, })
-    hl(0, "NvimTreeGitMerge", { fg = c.change, })
-    hl(0, "NvimTreeGitDirty", { fg = c.change, })
-    hl(0, "NvimTreeSymlink", { fg = c.light_blue, })
-    hl(0, "NvimTreeRootFolder", { fg = c.fg, bold = true, })
-    hl(0, "NvimTreeExecFile", { fg = c.light_green, })
+        -- Buffer
+        BufferCurrent = { fg = c.fg, bg = c.nvim_bg },
+        BufferCurrentIndex = { fg = c.fg, bg = c.nvim_bg },
+        BufferCurrentMod = { fg = c.color03, bg = c.nvim_bg },
+        BufferCurrentSign = { fg = c.color04, bg = c.nvim_bg },
+        BufferCurrentTarget = { fg = c.color01, bg = c.nvim_bg, bold = true, },
+        BufferVisible = { fg = c.fg, bg = c.nvim_bg },
+        BufferVisibleIndex = { fg = c.fg, bg = c.nvim_bg },
+        BufferVisibleMod = { fg = c.color03, bg = c.nvim_bg },
+        BufferVisibleSign = { fg = c.color08, bg = c.nvim_bg },
+        BufferVisibleTarget = { fg = c.color01, bg = c.nvim_bg, bold = true, },
+        BufferInactive = { fg = c.color08, bg = c.color00 },
+        BufferInactiveIndex = { fg = c.color08, bg = c.color00 },
+        BufferInactiveMod = { fg = c.color03, bg = c.color00 },
+        BufferInactiveSign = { fg = c.color08, bg = c.color00 },
+        BufferInactiveTarget = { fg = c.color01, bg = c.color00, bold = true, },
 
-    -- Buffer
-    hl(0, "BufferCurrent", { fg = c.fg, bg = c.bg })
-    hl(0, "BufferCurrentIndex", { fg = c.fg, bg = c.bg })
-    hl(0, "BufferCurrentMod", { fg = c.yellow, bg = c.bg })
-    hl(0, "BufferCurrentSign", { fg = c.blue, bg = c.bg })
-    hl(0, "BufferCurrentTarget", { fg = c.red, bg = c.bg, bold = true, })
-    hl(0, "BufferVisible", { fg = c.fg, bg = c.bg })
-    hl(0, "BufferVisibleIndex", { fg = c.fg, bg = c.bg })
-    hl(0, "BufferVisibleMod", { fg = c.yellow, bg = c.bg })
-    hl(0, "BufferVisibleSign", { fg = c.grey, bg = c.bg })
-    hl(0, "BufferVisibleTarget", { fg = c.red, bg = c.bg, bold = true, })
-    hl(0, "BufferInactive", { fg = c.grey, bg = c.alt_bg })
-    hl(0, "BufferInactiveIndex", { fg = c.grey, bg = c.alt_bg })
-    hl(0, "BufferInactiveMod", { fg = c.yellow, bg = c.alt_bg })
-    hl(0, "BufferInactiveSign", { fg = c.grey, bg = c.alt_bg })
-    hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.alt_bg, bold = true, })
+        -- StatusLine
+        StatusLine = { fg = c.color08, bg = c.color00 },
+        StatusLineNC = { fg = c.color08, bg = c.color00 },
+        StatusLineSeparator = { fg = c.color08, },
+        StatusLineTerm = { fg = c.color08, },
+        StatusLineTermNC = { fg = c.color08, },
 
-    -- StatusLine
-    hl(0, "StatusLine", { fg = c.grey, bg = c.dark_grey })
-    hl(0, "StatusLineNC", { fg = c.grey, bg = c.dark_grey })
-    hl(0, "StatusLineSeparator", { fg = c.grey, })
-    hl(0, "StatusLineTerm", { fg = c.grey, })
-    hl(0, "StatusLineTermNC", { fg = c.grey, })
+        -- IndentBlankline
+        IndentBlanklineContextChar = { fg = c.color08, },
+        IndentBlanklineContextStart = { underline = true, },
+        IndentBlanklineChar = { fg = c.color00, },
+        IndentBlanklineSpaceChar = { fg = c.color12, },
+        IndentBlanklineSpaceCharBlankline = { fg = c.color03, },
 
-    -- IndentBlankline
-    hl(0, "IndentBlanklineContextChar", { fg = c.grey, })
-    hl(0, "IndentBlanklineContextStart", { underline = true, })
-    hl(0, "IndentBlanklineChar", { fg = c.dark_grey, })
-    hl(0, "IndentBlanklineSpaceChar", { fg = c.light_blue, })
-    hl(0, "IndentBlanklineSpaceCharBlankline", { fg = c.yellow, })
+        -- Dashboard
+        DashboardCenter = { fg = c.color05, },
+        DashboardDesc = { fg = c.color08 },
+        DashboardFooter = { fg = c.color12, },
+        DashboardHeader = { fg = c.color04, },
+        DashboardIcon = { fg = c.color08, bold = true },
+        DashboardKey = { fg = c.color09 },
+        DashboardShortCut = { fg = c.color09, },
 
-    -- Dashboard
-    hl(0, "DashboardCenter", { fg = c.purple, })
-    hl(0, "DashboardDesc", { fg = c.grey })
-    hl(0, "DashboardFooter", { fg = c.light_blue, })
-    hl(0, "DashboardHeader", { fg = c.blue, })
-    hl(0, "DashboardIcon", { fg = c.grey, bold = true })
-    hl(0, "DashboardKey", { fg = c.orange })
-    hl(0, "DashboardShortCut", { fg = c.orange, })
+        -- Cmp
+        CmpItemAbbrDeprecated = { fg = c.color08, strikethrough = true, },
+        CmpItemAbbrMatch = { fg = c.color04, },
+        CmpItemAbbrMatchFuzzy = { fg = c.color04, },
+        CmpItemKindFunction = { fg = c.color04, },
+        CmpItemKindMethod = { fg = c.color04, },
+        CmpItemKindConstructor = { fg = c.color12, },
+        CmpItemKindClass = { fg = c.color12, },
+        CmpItemKindEnum = { fg = c.color12, },
+        CmpItemKindEvent = { fg = c.color03, },
+        CmpItemKindInterface = { fg = c.color12, },
+        CmpItemKindStruct = { fg = c.color12, },
+        CmpItemKindVariable = { fg = c.color01, },
+        CmpItemKindField = { fg = c.color01, },
+        CmpItemKindProperty = { fg = c.color01, },
+        CmpItemKindEnumMember = { fg = c.color09, },
+        CmpItemKindConstant = { fg = c.color09, },
+        CmpItemKindKeyword = { fg = c.color05, },
+        CmpItemKindModule = { fg = c.color12, },
+        CmpItemKindValue = { fg = c.fg, },
+        CmpItemKindUnit = { fg = c.fg, },
+        CmpItemKindText = { fg = c.fg, },
+        CmpItemKindSnippet = { fg = c.color03, },
+        CmpItemKindFile = { fg = c.fg, },
+        CmpItemKindFolder = { fg = c.fg, },
+        CmpItemKindColor = { fg = c.fg, },
+        CmpItemKindReference = { fg = c.fg, },
+        CmpItemKindOperator = { fg = c.fg, },
+        CmpItemKindTypeParameter = { fg = c.color01, }
+    }
 
-    -- Cmp
-    hl(0, "CmpItemAbbrDeprecated", { fg = c.grey, strikethrough = true, })
-    hl(0, "CmpItemAbbrMatch", { fg = c.blue, })
-    hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.blue, })
-    hl(0, "CmpItemKindFunction", { fg = c.blue, })
-    hl(0, "CmpItemKindMethod", { fg = c.blue, })
-    hl(0, "CmpItemKindConstructor", { fg = c.light_blue, })
-    hl(0, "CmpItemKindClass", { fg = c.light_blue, })
-    hl(0, "CmpItemKindEnum", { fg = c.light_blue, })
-    hl(0, "CmpItemKindEvent", { fg = c.yellow, })
-    hl(0, "CmpItemKindInterface", { fg = c.light_blue, })
-    hl(0, "CmpItemKindStruct", { fg = c.light_blue, })
-    hl(0, "CmpItemKindVariable", { fg = c.red, })
-    hl(0, "CmpItemKindField", { fg = c.red, })
-    hl(0, "CmpItemKindProperty", { fg = c.red, })
-    hl(0, "CmpItemKindEnumMember", { fg = c.orange, })
-    hl(0, "CmpItemKindConstant", { fg = c.orange, })
-    hl(0, "CmpItemKindKeyword", { fg = c.purple, })
-    hl(0, "CmpItemKindModule", { fg = c.light_blue, })
-    hl(0, "CmpItemKindValue", { fg = c.fg, })
-    hl(0, "CmpItemKindUnit", { fg = c.fg, })
-    hl(0, "CmpItemKindText", { fg = c.fg, })
-    hl(0, "CmpItemKindSnippet", { fg = c.yellow, })
-    hl(0, "CmpItemKindFile", { fg = c.fg, })
-    hl(0, "CmpItemKindFolder", { fg = c.fg, })
-    hl(0, "CmpItemKindColor", { fg = c.fg, })
-    hl(0, "CmpItemKindReference", { fg = c.fg, })
-    hl(0, "CmpItemKindOperator", { fg = c.fg, })
-    hl(0, "CmpItemKindTypeParameter", { fg = c.red, })
+    for highlight, parameters in pairs(highlights) do
+        vim.api.nvim_set_hl(0, highlight, parameters)
+    end
 end
 
-return theme
+
+M.set_terminal_highlights = function()
+    local function set_terminal_colors()
+        vim.g.terminal_color_0 = colors.dark_grey
+        vim.g.terminal_color_1 = colors.red
+        vim.g.terminal_color_2 = colors.green
+        vim.g.terminal_color_3 = colors.yellow
+        vim.g.terminal_color_4 = colors.blue
+        vim.g.terminal_color_5 = colors.purple
+        vim.g.terminal_color_6 = colors.white
+        vim.g.terminal_color_7 = colors.light_grey
+        vim.g.terminal_color_8 = colors.grey
+        vim.g.terminal_color_9 = colors.orange
+        vim.g.terminal_color_10 = colors.light_green
+        vim.g.terminal_color_11 = colors.dark_yellow
+        vim.g.terminal_color_12 = colors.light_blue
+        vim.g.terminal_color_13 = colors.light_purple
+        vim.g.terminal_color_14 = colors.color14
+        vim.g.terminal_color_15 = colors.color15
+        vim.g.terminal_color_background = colors.bg
+        vim.g.terminal_color_foreground = colors.fg
+    end
+end
+
+return M

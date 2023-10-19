@@ -1,0 +1,24 @@
+{
+  "name": "thescream",
+  "author": "simao-ferreira",
+  "color": [
+    "#282828",
+    "#cc241d",
+    "#5f981a",
+    "#ffc700",
+    "#326eb4",
+    "#593ea1",
+    "#689d6a",
+    "#bbbbbb",
+    "#928374",
+    "#bf5e29",
+    "#b8bb26",
+    "#ad8919",
+    "#2bb2e8",
+    "#8b7dca",
+    "#8ec07c",
+    "#efe5ca"
+  ],
+  "foreground": "#ebdbb2",
+  "background": "#000508"
+}
