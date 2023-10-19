@@ -25,7 +25,7 @@ local colors = {
     fg = "#EBDBB2", --white
     alt_fg = "#928374", --grey
 
-    bg = "#121212", -- Extra color
+    bg = "#121212", -- Extra gray color (closer to black)
     alt_bg = "#282828",
 
     add = "#5F981A", -- green
