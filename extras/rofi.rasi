@@ -1,0 +1,11 @@
+* {
+    transparent:    #00050820;
+    background:     #000508;
+    foreground:     #ebdbb2;
+    red:            #cc241d;
+    green:          #5f981a;
+    yellow:         #ffc700;
+    blue:           #326eb4;
+    gray:           #928374;
+    accent:         #689d6a;
+}

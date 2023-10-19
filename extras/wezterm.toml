@@ -1,0 +1,33 @@
+[colors]
+ansi = [
+    '#282828',
+    '#cc241d',
+    '#5f981a',
+    '#ffc700',
+    '#326eb4',
+    '#593ea1',
+    '#689d6a',
+    '#bbbbbb',
+]
+background = '#000508'
+brights = [
+    '#928374',
+    '#bf5e29',
+    '#b8bb26',
+    '#ad8919',
+    '#2bb2e8',
+    '#8b7dca',
+    '#8ec07c',
+    '#eae8e1',
+]
+cursor_bg = '#eae8e1'
+cursor_border = '#eae8e1'
+cursor_fg = '#282828'
+foreground = '#ebdbb2'
+selection_bg = '#eae8e1'
+selection_fg = '#689d6a'
+
+[colors.indexed]
+
+[metadata]
+name = 'Wezterm'
