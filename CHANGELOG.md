@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.2...v1.0.3) (2023-10-19)
+
+
+### Changed
+
+* Fix palette file ([d4f712b](https://github.com/simao-ferreira/thescream.nvim/commit/d4f712b7b958848d9471fdf8cf7fe85b13c4ab03))
+
 ## [1.0.2](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.1...v1.0.2) (2023-10-19)
 
 
