@@ -20,9 +20,6 @@ local colors = {
     color15 = "#EAE8E1", -- white
 
     nvim_bg = "#121212", -- Extra gray color (closer to black)
-    add = color02, -- green
-    change = color03, -- yellow
-    delete = color01, -- red
 }
 
 return colors
