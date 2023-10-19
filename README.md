@@ -6,4 +6,8 @@ tools.
 
 Yes, it's vivid, yes, it's flashy, yes, that's intended.
 
-![thescream-edvardnunch.png](assets%2Fthescream-edvardnunch.png)
+![thescream-edvardnunch.png](https://github.com/simao-ferreira/thescream.nvim/blob/main/assets%2Fthescream-edvardnunch.png)
+
+## Screenshot
+
+![nvim-example.png](https://github.com/simao-ferreira/thescream.nvim/blob/main/assets%2Fnvim-example.png)
