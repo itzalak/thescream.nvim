@@ -293,11 +293,11 @@ theme.set_highlights = function()
     hl(0, "BufferInactiveTarget", { fg = c.red, bg = c.alt_bg, bold = true, })
 
     -- StatusLine
-    hl(0, "StatusLine", { fg = c.light_grey, bg = c.grey })
-    hl(0, "StatusLineNC", { fg = c.light_grey, bg = c.grey })
-    hl(0, "StatusLineSeparator", { fg = c.light_grey, })
-    hl(0, "StatusLineTerm", { fg = c.light_grey, })
-    hl(0, "StatusLineTermNC", { fg = c.light_grey, })
+    hl(0, "StatusLine", { fg = c.grey, bg = c.dark_grey })
+    hl(0, "StatusLineNC", { fg = c.grey, bg = c.dark_grey })
+    hl(0, "StatusLineSeparator", { fg = c.grey, })
+    hl(0, "StatusLineTerm", { fg = c.grey, })
+    hl(0, "StatusLineTermNC", { fg = c.grey, })
 
     -- IndentBlankline
     hl(0, "IndentBlanklineContextChar", { fg = c.grey, })
