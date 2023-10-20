@@ -1,1 +1,1 @@
-require("thescream").setup({})
+require("thescream").load()
