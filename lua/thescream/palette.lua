@@ -13,9 +13,9 @@ local colors = {
     color08 = "#928374", -- grey
     color09 = "#BF5E29", -- orange
     color10 = "#B8BB26", -- light green
-    color11 = '#AD8919', -- dark yellow
+    color11 = "#AD8919", -- dark yellow
     color12 = "#2BB2E8", -- light blue
-    color13 = '#8B7DCA', -- light purple
+    color13 = "#8B7DCA", -- light purple
     color14 = "#EBDBB2", -- pale green
     color15 = "#EAE8E1", -- white
 

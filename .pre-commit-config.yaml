@@ -23,8 +23,8 @@ repos:
     rev: v2.4.0
     hooks:
       - id: conventional-pre-commit
-        stages: [ commit-msg ]
-        args: [ fix, feat, chore, docs, feat!, chore!, fix! ]
+        stages: [commit-msg]
+        args: [fix, feat, chore, docs, feat!, chore!, fix!]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0
@@ -34,3 +34,8 @@ repos:
           - --config
           - .markdownlint.yaml
           - --fix
+
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.18.2
+    hooks:
+      - id: stylua-system
