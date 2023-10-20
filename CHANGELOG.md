@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.4](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.3...v1.0.4) (2023-10-20)
+
+
+### Changed
+
+* Add extra colorscheme configuration files ([c69c522](https://github.com/simao-ferreira/thescream.nvim/commit/c69c52244d7beed4b44349971d057c0a79864faf))
+* Add neovim terminal colors ([8621113](https://github.com/simao-ferreira/thescream.nvim/commit/86211133df491f3b86ce3181342a9cc1c541aeaf))
+* Add stylua config and pre commit hook, apply suggestions ([3419e9f](https://github.com/simao-ferreira/thescream.nvim/commit/3419e9ff026e36422b8b408cd1d1f652b0f4f6de))
+* Add user command ([1025ccd](https://github.com/simao-ferreira/thescream.nvim/commit/1025ccdc42f697f6b59743598d5919611e6fa5fa))
+* Tweak theme variables for diagnostics and trouble ([f68ea6c](https://github.com/simao-ferreira/thescream.nvim/commit/f68ea6c902f7b5352b7c5651f2642f180cecca55))
+* Update readme file with installation and better colorschemes ([8dfd6c1](https://github.com/simao-ferreira/thescream.nvim/commit/8dfd6c131fdde6bef750e1341799bad90fb0bb35))
+
 ## [1.0.3](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.2...v1.0.3) (2023-10-19)
 
 
