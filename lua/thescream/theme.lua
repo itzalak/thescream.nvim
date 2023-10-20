@@ -218,11 +218,17 @@ M.set_highlights = function()
 		LspDiagnosticsFloatingInformation = { fg = c.color03 },
 		LspDiagnosticsFloatingInfo = { fg = c.color03 },
 		LspDiagnosticsFloatingHint = { fg = c.color04 },
+		DiagnosticError = { fg = c.color01 },
+		DiagnosticWarn = { fg = c.color09 },
+		DiagnosticInfo = { fg = c.color03 },
+		DiagnosticHint = { fg = c.color04 },
+		DiagnosticUnnecessary = { fg = c.nvim_bg },
 		DiagnosticSignError = { fg = c.color01 },
 		DiagnosticSignWarning = { fg = c.color09 },
 		DiagnosticSignInformation = { fg = c.color03 },
 		DiagnosticSignInfo = { fg = c.color03 },
 		DiagnosticSignHint = { fg = c.color04 },
+
 		LspDiagnosticsSignError = { fg = c.color01 },
 		LspDiagnosticsSignWarning = { fg = c.color09 },
 		LspDiagnosticsSignInformation = { fg = c.color03 },
@@ -238,11 +244,16 @@ M.set_highlights = function()
 		LspDiagnosticsUnderlineInformation = { underline = true },
 		LspDiagnosticsUnderlineInfo = { underline = true },
 		LspDiagnosticsUnderlineHint = { underline = true },
-		LspReferenceRead = {},
-		LspReferenceText = {},
-		LspReferenceWrite = {},
+		LspReferenceRead = { fg = c.color08 },
+		LspReferenceText = { fg = c.color08 },
+		LspReferenceWrite = { fg = c.color08 },
 		LspCodeLens = { fg = c.color08, italic = true },
 		LspCodeLensSeparator = { fg = c.color08, italic = true },
+
+		-- LspTrouble
+		TroubleText = { fg = c.fg },
+		TroubleCount = { fg = c.color05, bg = c.nvim_bg },
+		TroubleNormal = { fg = c.fg, bg = c.nvim_bg },
 
 		-- Telescope
 		TelescopeSelection = { fg = c.color04 },
