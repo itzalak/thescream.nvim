@@ -22,4 +22,10 @@ function M.load()
 	theme.set_terminal_highlights()
 end
 
+vim.api.nvim_create_user_command("Scream", function()
+	vim.cmd("colorscheme thescream")
+end, {})
+
+M.setup = M.load()
+
 return M
