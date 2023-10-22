@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.4...v1.0.5) (2023-10-22)
+
+
+### Changed
+
+* Change Pmenu colors to improve visibility ([02c95bf](https://github.com/simao-ferreira/thescream.nvim/commit/02c95bfe8325c0f36e331183397c49eeb1b0fddd))
+
 ## [1.0.4](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.3...v1.0.4) (2023-10-20)
 
 
