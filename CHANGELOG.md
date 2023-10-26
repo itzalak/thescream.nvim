@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.5...v1.0.6) (2023-10-26)
+
+
+### Changed
+
+* Add iterm colorscheme ([557e2a3](https://github.com/simao-ferreira/thescream.nvim/commit/557e2a31ee7e3162a783bac71dcc48aac8127216))
+
 ## [1.0.5](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.4...v1.0.5) (2023-10-22)
 
 
