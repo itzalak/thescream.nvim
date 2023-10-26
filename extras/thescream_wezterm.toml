@@ -1,4 +1,13 @@
 [colors]
+
+background = '#000508'
+foreground = '#ebdbb2'
+cursor_bg = '#eae8e1'
+cursor_border = '#eae8e1'
+cursor_fg = '#282828'
+selection_bg = '#eae8e1'
+selection_fg = '#689d6a'
+
 ansi = [
     '#282828',
     '#cc241d',
@@ -9,7 +18,7 @@ ansi = [
     '#689d6a',
     '#bbbbbb',
 ]
-background = '#000508'
+
 brights = [
     '#928374',
     '#bf5e29',
@@ -20,14 +29,10 @@ brights = [
     '#8ec07c',
     '#eae8e1',
 ]
-cursor_bg = '#eae8e1'
-cursor_border = '#eae8e1'
-cursor_fg = '#282828'
-foreground = '#ebdbb2'
-selection_bg = '#eae8e1'
-selection_fg = '#689d6a'
 
 [colors.indexed]
 
 [metadata]
-name = 'Wezterm'
+author = "Simao Ferreira"
+name = 'thescream'
+original_url = "https://github.com/simao-ferreira/thescream.nvim"
