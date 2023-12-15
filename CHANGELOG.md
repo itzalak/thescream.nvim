@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.6...v1.0.7) (2023-12-15)
+
+
+### Changed
+
+* Fix typo on README and some wording ([c3359f8](https://github.com/simao-ferreira/thescream.nvim/commit/c3359f86291b18f24545048b4b32a356c64449dc))
+
 ## [1.0.6](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.5...v1.0.6) (2023-10-26)
 
 
