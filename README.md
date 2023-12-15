@@ -1,8 +1,7 @@
 # thescream
 
 *The scream* is a vibrant and over the top color scheme inspired by the famous composition
-from [Edvard Munch](https://en.wikipedia.org/wiki/The_Scream) designed for using with neovim and other command line
-tools.
+from [Edvard Munch](https://en.wikipedia.org/wiki/The_Scream) designed for neovim and other command line tools.
 
 Yes, it's vivid, yes, it's flashy, yes, that's intended.
 
@@ -10,7 +9,7 @@ Yes, it's vivid, yes, it's flashy, yes, that's intended.
 
 ## Why
 
-I wanted to synchronize my day-to-day tools with a single theme and decided to learn how to create a theme for neovim. That's it.
+I wanted to synchronize my day-to-day tools with a single theme and wanted to learn how to create a theme for neovim. That's it.
 
 ## Screenshot
 
@@ -34,7 +33,7 @@ I wanted to synchronize my day-to-day tools with a single theme and decided to l
 
 ```lua
 require("lazy").setup({
-  { 'simao-ferreira/thescream.nvim', name = 'flexoki' }
+  { 'simao-ferreira/thescream.nvim', name = 'thescream' }
 })
 ```
 
