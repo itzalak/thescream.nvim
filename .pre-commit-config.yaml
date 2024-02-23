@@ -20,14 +20,14 @@ repos:
       - id: end-of-file-fixer
 
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v2.4.0
+    rev: v3.1.0
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
         args: [fix, feat, chore, docs, feat!, chore!, fix!]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.37.0
+    rev: v0.39.0
     hooks:
       - id: markdownlint
         args:
@@ -36,6 +36,6 @@ repos:
           - --fix
 
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.18.2
+    rev: v0.20.0
     hooks:
       - id: stylua-system
