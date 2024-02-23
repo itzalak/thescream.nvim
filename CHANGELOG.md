@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.8...v1.0.9) (2024-02-23)
+
+
+### Changed
+
+* Update pre commit configuration ([9ae46b6](https://github.com/simao-ferreira/thescream.nvim/commit/9ae46b6f41118aa01dbb7b149ba44cca05a44a93))
+
 ## [1.0.8](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.7...v1.0.8) (2024-02-23)
 
 
