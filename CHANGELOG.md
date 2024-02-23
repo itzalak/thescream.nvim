@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.7...v1.0.8) (2024-02-23)
+
+
+### Changed
+
+* Refactor treesitter highlight of capture names ([e256d94](https://github.com/simao-ferreira/thescream.nvim/commit/e256d94db86a1231f815660cd686b8864ad52f9b))
+
 ## [1.0.7](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.6...v1.0.7) (2023-12-15)
 
 
