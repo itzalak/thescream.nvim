@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.9...v1.0.10) (2024-03-03)
+
+
+### Changed
+
+* Add warp colorscheme ([e266d5c](https://github.com/simao-ferreira/thescream.nvim/commit/e266d5c30ed1d086d0652030a059776c0113b8c6))
+* Update alacritty colorscheme to toml format ([a29caee](https://github.com/simao-ferreira/thescream.nvim/commit/a29caeecaad7839f038d0231f7a4f0cd659e67fc))
+
 ## [1.0.9](https://github.com/simao-ferreira/thescream.nvim/compare/v1.0.8...v1.0.9) (2024-02-23)
 
 
