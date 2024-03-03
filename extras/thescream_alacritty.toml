@@ -1,0 +1,27 @@
+# The Scream colors for alacritty
+[colors.primary]
+# Default colors
+background = "#000508"
+foreground = "#ebdbb2"
+
+# Normal colors
+[colors.normal]
+black = "#282828"
+red = "#cc241d"
+green = "#5f981a"
+yellow = "#ffc700"
+blue = "#326eb4"
+magenta = "#593ea1"
+cyan = "#689d6a"
+white = "#bbbbbb"
+
+# Bright colors
+[colors.bright]
+black = "#928374"
+red = "#bf5e29"
+green = "#b8bb26"
+yellow = "#ad8919"
+blue = "#2bb2e8"
+magenta = "#8b7dca"
+cyan = "#8ec07c"
+white = "#eae8e1"
