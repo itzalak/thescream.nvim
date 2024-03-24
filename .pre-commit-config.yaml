@@ -34,6 +34,7 @@ repos:
           - --config
           - .markdownlint.yaml
           - --fix
+        exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
     rev: v0.20.0
