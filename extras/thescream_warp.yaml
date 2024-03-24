@@ -1,3 +1,5 @@
+# Theme: the scream
+# Author: Itzalak
 accent: '#326eb4' # Accent color for UI elements
 background: '#000508' # Terminal background color
 details: darker # Whether the theme is lighter or darker.

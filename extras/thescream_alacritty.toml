@@ -1,4 +1,5 @@
 # The Scream colors for alacritty
+# Author: Itzalak
 [colors.primary]
 # Default colors
 background = "#000508"

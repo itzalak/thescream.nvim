@@ -5,7 +5,7 @@ from [Edvard Munch](https://en.wikipedia.org/wiki/The_Scream) designed for neovi
 
 Yes, it's vivid, yes, it's flashy, yes, that's intended.
 
-![thescream-edvardnunch.png](https://github.com/simao-ferreira/thescream.nvim/blob/main/assets%2Fthescream-edvardnunch.png)
+![thescream-edvardnunch.png](https://github.com/itzalak/thescream.nvim/blob/main/assets%2Fthescream-edvardnunch.png)
 
 ## Why
 
@@ -13,14 +13,14 @@ I wanted to synchronize my day-to-day tools with a single theme and wanted to le
 
 ## Screenshot
 
-![nvim-example.png](https://github.com/simao-ferreira/thescream.nvim/blob/main/assets%2Fnvim-example.png)
+![nvim-example.png](https://github.com/itzalak/thescream.nvim/blob/main/assets%2Fnvim-example.png)
 
 ## Instalation
 
 **[LazyVim](https://github.com/LazyVim/LazyVim)**
 
 ```lua
-{ "simao-ferreira/thescream.nvim" },
+{ "itzalak/thescream.nvim" },
 {
     "LazyVim/LazyVim",
     opts = {
@@ -33,7 +33,7 @@ I wanted to synchronize my day-to-day tools with a single theme and wanted to le
 
 ```lua
 require("lazy").setup({
-  { 'simao-ferreira/thescream.nvim', name = 'thescream' }
+  { 'itzalak/thescream.nvim', name = 'thescream' }
 })
 ```
 

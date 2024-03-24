@@ -33,6 +33,6 @@ brights = [
 [colors.indexed]
 
 [metadata]
-author = "Simao Ferreira"
+author = "Itzalak"
 name = 'thescream'
-original_url = "https://github.com/simao-ferreira/thescream.nvim"
+original_url = "https://github.com/itzalak/thescream.nvim"
