@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.11](https://github.com/itzalak/thescream.nvim/compare/v1.0.10...v1.0.11) (2024-03-24)
+
+
+### Changed
+
+* Refactor links and info ([29f9337](https://github.com/itzalak/thescream.nvim/commit/29f93371bf51cdac5c9df27e59ef01ca0888c847))
+* Update pre commit configuration ([b0dbc81](https://github.com/itzalak/thescream.nvim/commit/b0dbc8114168f596481ee66e3a73c955930666e5))
+
 ## [1.0.10](https://github.com/itzalak/thescream.nvim/compare/v1.0.9...v1.0.10) (2024-03-03)
 
 
